@@ -2,9 +2,9 @@
 class Database {
     
     private $db_host = 'localhost';
-    private $db_name = 'php_api';
+    private $db_name = 'brainfooddb';
     private $db_username = 'root';
-    private $db_password = '';
+    private $db_password = 'wien1080';
     
     public function dbConnection(){
         try{
