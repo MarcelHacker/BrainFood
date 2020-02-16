@@ -31,7 +31,7 @@
 
                 <b-form-group label="Date of birth">
                     <b-form-input
-                        v-model="form.birthday"
+                        v-model="form.birthdate"
                         type="date"
                         required
                         placeholder="Date of birth"
@@ -73,6 +73,10 @@
                     </b-input-group>
                 </b-form-group>
 
+                <b-form-group label="Country">
+                    <b-form-input v-model="form.country" type="text" required placeholder="Country"></b-form-input>
+                </b-form-group>
+
                 <b-form-group label="Password">
                     <b-form-input
                         v-model="form.password"
@@ -108,7 +112,17 @@ export default {
     data: () => ({
         form: {
             username: null,
+            firstName: null,
+            lastName: null,
+            email: null,
+            birthdate: null,
+            street: null,
+            houseNumber: null,
+            city: null,
+            postCode: null,
+            country: null,
             password: null,
+            confirmPassword: null,
         },
     }),
     methods: {
