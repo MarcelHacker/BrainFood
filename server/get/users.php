@@ -34,14 +34,21 @@ if($num>0){
  
         $user_item=array(
             "id" => $id,
-            "name" => $name,
-            "description" => html_entity_decode($description),
-            "price" => $price,
-            "category_id" => $category_id,
-            "category_name" => $category_name
+            "firstName" => $firstName,
+            "lastName" => $lastName,
+            "username" => $username,
+            "email" => $email,
+            "city" => $city,
+            "postCode" => $postCode,
+            "houseNumber" => $houseNumber,
+            "password" => $password,
+            "confirmPassword" => $confirmPassword,
+            "birthdate" => $birthdate,
+            "country" => $country,
         );
  
-        array_push($users_arr[], $user_item);
+        echo $users_arr;
+        array_push($users_arr, $user_item);
     }
  
     // set response code - 200 OK
