@@ -5,26 +5,23 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/user.php';
+include_once '../objects/users.php';
  
 // instantiate database and product object
 $database = new Database();
 $db = $database->getConnection();
  
 // initialize object
-$users = new Product($db);
+$users = new Users($db);
  
 // read products will be here
 // query products
-$stmt = $product->read();
-$num = $stmt->rowCount();
+$stmt = $users->read();
  
 // check if more than 0 record found
 if($num>0){
- 
     // products array
-    $products_arr=array();
-    $products_arr["records"]=array();
+    $users_arr=array();
  
     // retrieve our table contents
     // fetch() is faster than fetchAll()
@@ -35,7 +32,7 @@ if($num>0){
         // just $name only
         extract($row);
  
-        $product_item=array(
+        $user_item=array(
             "id" => $id,
             "name" => $name,
             "description" => html_entity_decode($description),
@@ -44,14 +41,14 @@ if($num>0){
             "category_name" => $category_name
         );
  
-        array_push($products_arr["records"], $product_item);
+        array_push($users_arr[], $user_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
     // show products data in json format
-    echo json_encode($products_arr);
+    echo json_encode($users_arr);
 }
 // no products found will be here
 else{
