@@ -1,13 +1,18 @@
 <template>
     <div>
-        <h1>{{message}}</h1>
+        <navbar />
+        <registration-form />
     </div>
 </template>
 
 <script>
+import { RegistrationForm, Navbar } from './../components';
+
 export default {
-   // data: function(value, index) {return {message'hallo}}=> ({ message: 'Hallo' }),
-    data: () => ({ message: 'Hallo' }),
-    //data: {return {message: 'Hallo'}}
+    components: {
+        RegistrationForm,
+        Navbar,
+    },
+    data: () => ({}),
 };
 </script>
