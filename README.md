@@ -5,6 +5,9 @@
 # PHP CRUD Rest API
 https://www.codeofaninja.com/2017/02/create-simple-rest-api-in-php.html
 
+# Nützlicher Toasts für den Warenkorb (Produkt dem Warenkorb Hinzugefügt Benachrichtigung)?
+https://bootstrap-vue.js.org/docs/components/toast/
+
 ## Build Setup
 
 ``` bash
