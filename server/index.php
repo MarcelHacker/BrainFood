@@ -5,26 +5,26 @@ $password = "";
 $dbname = "brainfooddb"; 
 $id = '';
 
-$con = mysqli_connect($host, $user, $password,$dbname);
+$con = mysqli_connect($host, $user, $password, $dbname);
 
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 //$input = json_decode(file_get_contents('php://input'),true);
 
 
-if (!$con) 
+if (!$con) // Bei Verbindungsfehler
 {
   die("Connection failed: " . mysqli_connect_error());
 }
 
 
-switch ($method) 
+switch ($method)
 {
-    case 'GET':
-      $id = $_GET['id'];
+    case 'GET':   // Daten abfragen
+      $id = $_GET['id'];  // id
       $sql = "select * from contacts".($id?" where id=$id":''); 
       break;
-    case 'POST':
+    case 'POST':  // Daten erstellen
       $name = $_POST["name"];
       $email = $_POST["email"];
       $country = $_POST["country"];

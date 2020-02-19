@@ -6,13 +6,13 @@ class Product{
     private $table_name = "products";
  
     // object properties
-    public $id;
-    public $name;
-    public $description;
-    public $price;
-    public $category_id;
-    public $category_name;
-    public $created;
+    public $id;             // Produkt ID
+    public $name;           // Produktname
+    public $description;    // Beschreibung bzw. Menge
+    public $price;          // Preis bezogen auf die Menge
+    public $category_id;    // Kategorienummer des Produkts
+    public $category_name;  // Kategoriename
+    public $created;        // Erstelldatum
  
     // constructor with $db as database connection
     public function __construct($db){
