@@ -24,19 +24,21 @@ export default {
         AboutCard,
         Navbar,
     },
-    data: () => ({  //TODO Insert Text 
+    data: () => ({
+        //TODO Insert Text
         topTitle: 'Über uns',
         source1: 'https://placekitten.com/1000/300',
-        source2: '../assets/tokoll.png',
-        topText1: 'xx',
-        topText2: 'yy',
+        source2: '../assets/about/foodchain.png',
+        topText1: 'Unsere Verkaufskette',
+        topText2:
+            'Alle unsere Produkte sind mit einem besonderen Gütesiegel versehen',
 
         midTitle: 'Moin Hannes',
-        source3: '../assets/stollprotokoll.png',
-        midText: 'Moin Stollos',
+        source3: '../assets/about/nachhaltig.jpg',
+        midText: 'Unsere Produkte haben so gut wie keine Foodmiles',
 
-        source4: '../assets/st.png',
-        bottomText: 'Kekse',
+        source4: '../assets/about/farmer.jpg',
+        bottomText: 'Wir unterschtützen lokale Bauern',
     }),
 };
 </script>

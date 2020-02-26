@@ -27,21 +27,21 @@ export default {
         products: [
             {
                 title: 'Tomatoes',
-                source: '../assets/logo.png',
+                source: '../assets/products/tomaten.png',
                 text: 'Fresh tomatoes from Brasil', // Short description
                 description: 'Fresh tomatoes 100g from Brasil farmes', // Long detailed description
             },
             {
                 title: 'Cucumber',
-                source: '../assets/logo.png',
+                source: '../assets/products/xy.png',
                 text: 'Fresh Cucumbers from Brasil', // Short description
                 description: 'Fresh Cucumbers 100g from Brasil farmes', // Long detailed description
             },
             {
-                title: 'Cucumber',
-                source: '../assets/logo.png',
-                text: 'Fresh Cucumbers from Brasil', // Short description
-                description: 'Fresh Cucumbers 100g from Brasil farmes', // Long detailed description
+                title: 'Gurken',
+                source: '../assets/products/gurken.png',
+                text: 'Fresh Gurks from Tschechien', // Short description
+                description: 'Fresh Gukrs 100g from Tschechien farmes', // Long detailed description
             },
         ],
         // TODO: PHP products connetion, Hinzufügen der PHP daten zu products array
