@@ -20,11 +20,11 @@ if (!$con) // Bei Verbindungsfehler
 
 switch ($method)
 {
-    case 'GET':   // Daten abfragen
+    case 'GET':   // Data request
       $id = $_GET['id'];  // id
       $sql = "select * from contacts".($id?" where id=$id":''); 
       break;
-    case 'POST':  // Daten erstellen
+    case 'POST':  // Data insert
       $name = $_POST["name"];
       $email = $_POST["email"];
       $country = $_POST["country"];

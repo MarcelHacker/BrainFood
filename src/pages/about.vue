@@ -24,7 +24,7 @@ export default {
         AboutCard,
         Navbar,
     },
-    data: () => ({
+    data: () => ({  //TODO Insert Text 
         topTitle: 'Über uns',
         source1: 'https://placekitten.com/1000/300',
         source2: '../assets/tokoll.png',

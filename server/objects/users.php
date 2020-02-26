@@ -14,7 +14,7 @@ class Product{
     public $city;
     public $postCode;
     public $houseNumber;
-    public $password;
+    public $password;       //TODO Hash Password
     public $confirmPassword;
     public $birthdate;
     public $country;
