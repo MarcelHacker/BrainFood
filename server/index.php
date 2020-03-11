@@ -58,3 +58,4 @@ if ($method == 'GET') {
   }
 
 $con->close();
+?>
