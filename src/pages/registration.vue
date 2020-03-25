@@ -1,7 +1,7 @@
 <template>
     <div>
         <navbar />
-        <registration-form />
+        <registration-form @submit="onSubmit" />
     </div>
 </template>
 
@@ -14,5 +14,8 @@ export default {
         Navbar,
     },
     data: () => ({}),
+    methods: {
+        onSubmit(formData) {},
+    },
 };
 </script>

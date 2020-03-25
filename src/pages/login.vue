@@ -1,7 +1,6 @@
 <template>
     <div>
         <navbar />
-
         <div class="row align-middle justify-content-md-center">
             <div class="col-sm-6">
                 <login-form @submit="onSubmit" />

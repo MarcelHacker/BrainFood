@@ -1,5 +1,4 @@
-
-INSERT INTO users(firstName, lastName, username, email,city, postCode, houseNumber, password, confirmPassword, birthdate, createdDate, modifyDate, createUser, modifyUser, country)
+INSERT INTO users
+    (id, firstname, lastname, username, email, city, postCode, houseNumber, password, confirmPassword, birthdate, country, created, modified)
 VALUES
-('Marcel', 'Hacker', 'hacker', 'mhacker@example.com', 'Wien', 1120, 12, 'demo123.', 'demo123.', '1999-12-20', CURRENT_TIMESTAMP, NULL, 'admin', NULL, 'Austria'),
-('Admin', null, 'admin', NULL, 'Wien', 1120, 12, 'admin123.', 'admin123.', '1999-12-20', CURRENT_TIMESTAMP, NULL, 'root', NULL, 'Austria');
+    (1, 'marcel', 'hacker', 'hacker201', 'hackemangmail.com', 'tschechien', '300', '2', 'hannes', 'hannes', '2001-0-28', 'Tschechien', '2020-03-28', '2020-03-23');

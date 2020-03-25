@@ -39,6 +39,7 @@ if($num>0){
             "username" => $username,
             "email" => $email,
             "city" => $city,
+            "street" => $street,
             "postCode" => $postCode,
             "houseNumber" => $houseNumber,
             "password" => $password,

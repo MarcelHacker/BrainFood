@@ -25,19 +25,22 @@ export default {
         Navbar,
     },
     data: () => ({
-        //TODO Insert Text
         topTitle: 'Über uns',
-        source1: 'https://placekitten.com/1000/300',
-        source2: '../assets/about/foodchain.png',
+        source1:
+            'https://4.bp.blogspot.com/-jbzZ72-IjXY/XBlh9xNnDUI/AAAAAAAAOk8/zcke1DkSUrk1hhDd1FBwlw9hC4DsB4H6QCLcBGAs/s1600/Duurzame.jpg',
+        source2:
+            'https://cdn.prod.www.spiegel.de/images/a514013a-0001-0004-0000-000001303769_w948_r1.77_fpx32.67_fpy55.01.jpg',
         topText1: 'Unsere Verkaufskette',
         topText2:
             'Alle unsere Produkte sind mit einem besonderen Gütesiegel versehen',
 
         midTitle: 'Moin Hannes',
-        source3: '../assets/about/nachhaltig.jpg',
+        source3:
+            'https://www.ecowoman.de/images/stories/Bauen_und_Wohnen/so_nachhaltig_sein_760.jpg',
         midText: 'Unsere Produkte haben so gut wie keine Foodmiles',
 
-        source4: '../assets/about/farmer.jpg',
+        source4:
+            'https://landeszentrum-bw.de/site/machsmahl/get/5541373/clipdealer-A54578553-photo_jpg_s.jpg',
         bottomText: 'Wir unterschtützen lokale Bauern',
     }),
 };

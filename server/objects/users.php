@@ -1,5 +1,5 @@
 <?php
-class Product{
+class User{
  
     // database connection and table name
     private $conn;
