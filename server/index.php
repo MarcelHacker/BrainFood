@@ -22,16 +22,24 @@ switch ($method)
 {
     case 'GET':   // Data request
       $id = $_GET['id'];  // id
-      $sql = "select * from contacts".($id?" where id=$id":''); 
+      $sql = "select * from users".($id?" where id=$id":''); 
       break;
     case 'POST':  // Data insert
-      $name = $_POST["name"];
+      $firstname = $_POST["name"];
+      $lastname = $_POST["lastname"];
+      $username = $_POST["username"];
       $email = $_POST["email"];
-      $country = $_POST["country"];
       $city = $_POST["city"];
-      $job = $_POST["job"];
+      $postcode = $_POST["postCode"];
+      $housenumber = $_POST["houseNumber"];
+      $password = $_POST["password"];
+      $confirmpassword = $_POST["confirmPassword"];
+      $birthdate = $_POST["birthdate"];
+      $country = $_POST["country"];
 
-      $sql = "insert into contacts (name, email, city, country, job) values ('$name', '$email', '$city', '$country', '$job')"; 
+      $sql = "INSERT INTO users (firstName, lastName, username, email, city, postCode, houseNumber, password, confirmPassword, birthdate, , country) 
+               values 
+               ('$firstname', '$lastname', '$username', '$email', '$city', '$postcode', '$housenumber', '$password', '$confirmpassword', '$birthdate', '$country')";
       break;
 }
 

@@ -1,48 +1,67 @@
 <?php
-// SET HEADER
+// required headers
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: access");
-header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
-// INCLUDING DATABASE AND MAKING OBJECT
-require '../database.php';
-$db_connection = new Database();
-$conn = $db_connection->dbConnection();
-
-// GET DATA FROM REQUEST BODY
+  
+// get database connection
+include_once '../server/database.php';
+  
+// instantiate product object
+include_once '../objects/product.php';
+  
+$database = new Database();
+$db = $database->getConnection();
+  
+$product = new Product($db);
+  
+// get posted data
 $data = json_decode(file_get_contents("php://input"));
-
-//CREATE MESSAGE ARRAY AND SET EMPTY
-$msg['message'] = '';
-
-// CHECK IF RECEIVED DATA FROM THE REQUEST
-if(isset($data->title) && isset($data->body) && isset($data->author)){
-    // CHECK DATA VALUE IS EMPTY OR NOT
-    if(!empty($data->title) && !empty($data->body) && !empty($data->author)){
-        
-        $insert_query = "INSERT INTO `posts`(title,body,author) VALUES(:title,:body,:author)";
-        
-        $insert_stmt = $conn->prepare($insert_query);
-        // DATA BINDING
-        $insert_stmt->bindValue(':title', htmlspecialchars(strip_tags($data->title)),PDO::PARAM_STR);
-        $insert_stmt->bindValue(':body', htmlspecialchars(strip_tags($data->body)),PDO::PARAM_STR);
-        $insert_stmt->bindValue(':author', htmlspecialchars(strip_tags($data->author)),PDO::PARAM_STR);
-        
-        if($insert_stmt->execute()){
-            $msg['message'] = 'Data Inserted Successfully';
-        }else{
-            $msg['message'] = 'Data not Inserted';
-        } 
-        
-    }else{
-        $msg['message'] = 'Oops! empty field detected. Please fill all the fields';
+  
+// make sure data is not empty
+if(
+    !empty($data->name) &&
+    !empty($data->price) &&
+    !empty($data->description) &&
+    !empty($data->category_id)
+){
+  
+    // set product property values
+    $product->name = $data->name;
+    $product->price = $data->price;
+    $product->description = $data->description;
+    $product->category_id = $data->category_id;
+    $product->created = date('Y-m-d H:i:s');
+  
+    // create the product
+    if($product->create()){
+  
+        // set response code - 201 created
+        http_response_code(201);
+  
+        // tell the user
+        echo json_encode(array("message" => "Product was created."));
+    }
+  
+    // if unable to create the product, tell the user
+    else{
+  
+        // set response code - 503 service unavailable
+        http_response_code(503);
+  
+        // tell the user
+        echo json_encode(array("message" => "Unable to create product."));
     }
 }
+// tell the user data is incomplete
 else{
-    $msg['message'] = 'Please fill all the fields | title, body, author';
+  
+    // set response code - 400 bad request
+    http_response_code(400);
+  
+    // tell the user
+    echo json_encode(array("message" => "Unable to create product. Data is incomplete."));
 }
-//ECHO DATA IN JSON FORMAT
-echo  json_encode($msg);
 ?>

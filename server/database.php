@@ -3,8 +3,8 @@ class Database {
     
     private $db_host = 'localhost';
     private $db_name = 'brainfooddb';
-    private $db_username = 'rosinger';
-    private $db_password = 'wien1080';
+    private $db_username = 'root';
+    private $db_password = '';
     
     public function dbConnection(){     //Database connection
         try{
