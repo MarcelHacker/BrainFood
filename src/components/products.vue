@@ -25,7 +25,10 @@
                 </b-input-group>
             </b-modal>
 
-            <b-button :to="'/products/' + item.id" variant="outline-primary">View Product Details</b-button>
+            <b-button
+                :to="'/products/details/' + item.id"
+                variant="outline-primary"
+            >View Product Details</b-button>
         </b-card>
     </div>
 </template>
