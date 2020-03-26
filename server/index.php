@@ -30,6 +30,7 @@ switch ($method)
       $username = $_POST["username"];
       $email = $_POST["email"];
       $city = $_POST["city"];
+      $street = $_POST["street"];
       $postcode = $_POST["postCode"];
       $housenumber = $_POST["houseNumber"];
       $password = $_POST["password"];

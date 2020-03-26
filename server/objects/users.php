@@ -12,9 +12,10 @@ class User{
     public $username;
     public $email;
     public $city;
+    public $street;
     public $postCode;
     public $houseNumber;
-    public $password;       //TODO Hash Password
+    public $password;      
     public $confirmPassword;
     public $birthdate;
     public $country;
